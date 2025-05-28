@@ -23,8 +23,6 @@ Este projeto é uma aplicação web de gerenciamento de tarefas (To-Do List) des
 ## 🎨 Temas
 
 - **Tema Claro:**  
-  - Fundo off-white `#faf9f6`
-  - Menu lateral bege `#ede7d7`
   - Cores suaves e harmônicas
 
 - **Tema Escuro (Alto Contraste):**  
@@ -36,7 +34,9 @@ Este projeto é uma aplicação web de gerenciamento de tarefas (To-Do List) des
 
 ## 📸 Preview
 
-![Preview do App](https://user-images.githubusercontent.com/placeholder/todo-preview.png)
+Acesse a aplicação online:  
+👉 [https://todo-list-desafio-tecnico.vercel.app/](https://todo-list-desafio-tecnico.vercel.app/)
+
 
 ---
 
@@ -44,7 +44,7 @@ Este projeto é uma aplicação web de gerenciamento de tarefas (To-Do List) des
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/lista-tarefas-moderna.git
+   git clone https://github.com/leomoreiraa/Todo-List---Desafio-tecnico.git
    ```
 2. **Abra o projeto no seu editor ou IDE.**
 3. **Abra o arquivo `index.html` no seu navegador.**
@@ -93,8 +93,8 @@ Este projeto é uma aplicação web de gerenciamento de tarefas (To-Do List) des
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [Seu Nome Aqui]  
-[LinkedIn](https://www.linkedin.com/in/seu-perfil) | [GitHub](https://github.com/seu-usuario)
+Desenvolvido por [Leonardo Moreira](https://www.linkedin.com/in/leomoreiraa/)  
+[LinkedIn](https://www.linkedin.com/in/leomoreiraa/) | [GitHub](https://github.com/leomoreiraa)
 
 ---
 
@@ -104,3 +104,8 @@ Este projeto foi desenvolvido como parte de um **desafio técnico**.
 Fique à vontade para sugerir melhorias ou relatar problemas!
 
 ---
+
+## 🌐 Links Importantes
+
+- **Deploy:** [https://todo-list-desafio-tecnico.vercel.app/](https://todo-list-desafio-tecnico.vercel.app/)
+- **Repositório no GitHub:** [https://github.com/leomoreiraa/Todo-List---Desafio-tecnico](https://github.com/leomoreiraa/Todo-List---Desafio-tecnico)
