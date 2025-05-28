@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas Moderna</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-light font-size-medium">
+    <div class="app-container">
+        <!-- Barra lateral de navegação -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Minhas Tarefas</h1>
+                <button id="toggle-sidebar" class="icon-button" aria-label="Alternar barra lateral">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h2>Filtros</h2>
+                    <ul class="sidebar-nav">
+                        <li><button class="nav-item filter-btn active" data-filter="all">
+                            <i class="fas fa-list"></i>Todas
+                        </button></li>
+                        <li><button class="nav-item filter-btn" data-filter="pending">
+                            <i class="fas fa-clock"></i>Pendentes
+                        </button></li>
+                        <li><button class="nav-item filter-btn" data-filter="completed">
+                            <i class="fas fa-check-circle"></i>Concluídas
+                        </button></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h2>Tags</h2>
+                    <div id="tag-filter-list" class="tag-list">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="accessibility-controls">
+                    <button id="decrease-font" class="icon-button" aria-label="Diminuir tamanho da fonte">
+                        <i class="fas fa-text-height fa-xs"></i>
+                    </button>
+                    <button id="increase-font" class="icon-button" aria-label="Aumentar tamanho da fonte">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                    <button id="toggle-theme" class="icon-button" aria-label="Alternar tema de cores">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2 id="current-view-title">Todas as Tarefas</h2>
+                <button id="add-task-toggle" class="primary-button">
+                    <i class="fas fa-plus"></i> Nova Tarefa
+                </button>
+            </div>
+            
+            <!-- Formulário de adição de tarefa (inicialmente oculto) -->
+            <section id="add-task-area" class="card add-task-form">
+                <div class="form-row">
+                    <input type="text" id="new-task-text" placeholder="O que precisa ser feito?">
+                </div>
+                <div class="form-row form-details">
+                    <div class="form-group">
+                        <label for="new-task-due-date"><i class="fas fa-calendar"></i></label>
+                        <input type="datetime-local" id="new-task-due-date" aria-label="Prazo da tarefa">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-task-tags"><i class="fas fa-tag"></i></label>
+                        <input type="text" id="new-task-tags" placeholder="Tags (separadas por vírgula)">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button id="add-task-button" class="primary-button">Adicionar</button>
+                    <button id="cancel-add-task" class="secondary-button">Cancelar</button>
+                </div>
+            </section>
+            
+            <!-- Lista de tarefas -->
+            <section id="task-list-area">
+                <ul id="tasks" class="task-list">
+                </ul>
+                
+                <!-- Mensagem para quando não houver tarefas -->
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>Nenhuma tarefa encontrada</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal de Edição (oculto por padrão) -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h2>Editar Tarefa</h2>
+                <button class="close-modal-btn icon-button" aria-label="Fechar modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="edit-task-id">
+                <div class="form-row">
+                    <input type="text" id="edit-task-text" placeholder="Descrição da tarefa">
+                </div>
+                <div class="form-row form-details">
+                    <div class="form-group">
+                        <label for="edit-task-due-date"><i class="fas fa-calendar"></i></label>
+                        <input type="datetime-local" id="edit-task-due-date" aria-label="Novo prazo da tarefa">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-task-tags"><i class="fas fa-tag"></i></label>
+                        <input type="text" id="edit-task-tags" placeholder="Tags (separadas por vírgula)">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-edit-button" class="primary-button">Salvar</button>
+                <button class="close-modal-btn secondary-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-confirm" class="toast-confirm" style="display: none;">
+        <i class="fas fa-check-circle"></i> Tarefa adicionada!
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
